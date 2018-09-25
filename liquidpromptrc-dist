@@ -10,7 +10,7 @@ unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     LP_PS1_FILE=~/Scripts/liquidprompt/alexx.ps1;;
     Darwin*)    LP_PS1_FILE=~/Applications/liquidprompt/alexx.ps1;;
-    *)          machine="UNKNOWN:${unameOut}"
+    *)          LP_PS1_FILE="UNKNOWN:${unameOut}"
 esac
 
 #############
