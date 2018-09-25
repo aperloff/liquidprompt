@@ -1697,6 +1697,15 @@ fi
 
 _lp_set_prompt()
 {
+    # create a $fill of all screen width minus the time string and a space:
+    let fillsize=${COLUMNS}-9
+    fill=""
+    while [ "$fillsize" -gt "0" ]
+    do
+        fill="-${fill}" # fill with underscores to work on 
+        let fillsize=${fillsize}-1
+    done
+
     # Display the return value of the last command, if different from zero
     # As this get the last returned code, it should be called first
     local -i err=$?
